@@ -1,4 +1,3 @@
-Certainly! Here's a professional and neat README.md file for your GitHub app, the JavaScript Quiz Maker (JS_Quiz_Maker), based on Electron, Node.js, and Express:
 # JavaScript Quiz Maker (JS_Quiz_Maker)
 
 JS_Quiz_Maker is a cross-platform desktop application built with Electron, Node.js, and Express that allows you to create and manage JavaScript quizzes effortlessly. Whether you're a teacher, a developer, or simply want to challenge your JavaScript knowledge, this app makes quiz creation and sharing a breeze.
