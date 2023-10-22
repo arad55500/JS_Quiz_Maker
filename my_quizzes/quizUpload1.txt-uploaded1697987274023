@@ -1,4 +1,0 @@
-openAnswer(What is the capital of France?, Paris)
-multipleChoice2questions(Which of these is a fruit?, Apple, Car, Apple)
-multipleChoice3questions(Which languages are used in web development?, Python, JavaScript, Ruby, JavaScript)
-multipleChoice4questions(What's the largest planet in our solar system?, Earth, Mars, Jupiter, Venus, Jupiter)
