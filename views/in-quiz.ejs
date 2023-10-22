@@ -12,6 +12,10 @@
 </head>
 <body class="bg-light">
 
+<%- include('../views/partials/header'); %>
+
+<div class="bg-light mt-3 justify-content-center px-2">
+
 <form method="post" action="/submit-quiz" class="mb-5 center">
     <% quizData.forEach((quizItem, index) => { %>
         <div class="quiz-item mb-4">
@@ -38,7 +42,7 @@
     
 </form>
 
-
+</div>
 
 </body>
 </html>

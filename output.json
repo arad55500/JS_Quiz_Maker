@@ -1,42 +1,37 @@
 [
   {
     "type": "openAnswer",
-    "question": "Which country is known as the Land of the Rising Sun?",
-    "response": "Japan"
+    "question": "What is the largest ocean on Earth?",
+    "response": "Pacific Ocean"
   },
   {
     "type": "multipleChoice",
-    "question": "Which of these is a color?",
+    "question": "Which of these is a primary color?",
     "choices": [
       "Blue",
-      "Dog"
+      "Sandwich"
     ],
     "response": "Blue"
   },
   {
     "type": "multipleChoice",
-    "question": "Which Programming language uses the JVM?",
+    "question": "Which of these are computer operating systems?",
     "choices": [
-      "Apple",
-      "Java",
-      "C#"
+      "Windows",
+      "Sandwich",
+      "Banana"
     ],
-    "response": "Java"
+    "response": "Windows"
   },
   {
     "type": "multipleChoice",
-    "question": "Which of these are European countries?",
+    "question": "Which of these is a type of tree?",
     "choices": [
-      "France",
-      "Apple",
-      "China",
-      "Russia"
+      "Pine",
+      "Bicycle",
+      "Sandwich",
+      "Microphone"
     ],
-    "response": "France"
-  },
-  {
-    "type": "openAnswer",
-    "question": "What year was the U.S secleration of Independence signed?",
-    "response": "1776"
+    "response": "Pine"
   }
 ]
