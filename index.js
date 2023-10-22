@@ -14,6 +14,8 @@ const notifier = require('node-notifier');
 const app = express();
 const { app: electronApp, BrowserWindow } = electron;
 
+const version = require('./package.json').version;
+
 try {
     mongoose.connect('mongodb://localhost:27017/quizDB', { useNewUrlParser: true, useUnifiedTopology: true });
     console.log('Connected to MongoDB (QuizDB Database)');
@@ -112,7 +114,9 @@ app.post('/create', (req, res) => {
 });
 
 app.post('/about', (req, res) => {
-    res.render('about.ejs');
+    res.render('about.ejs', {
+        version: version
+    });
 });
 
 app.post('/quiz', (req, res) => {
