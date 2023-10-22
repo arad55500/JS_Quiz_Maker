@@ -8,13 +8,16 @@ JS_Quiz_Maker is a cross-platform desktop application built with Electron, Node.
 - Automatically submit quiz scores and provide immediate feedback to the user.
 - Detailed scoring and feedback after completing a quiz.
 - Share quizzes by transferring text files and importing them into the application when running it elsewhere.
+- Create and edit JavaScript quizzes with a user-friendly interface.
+- Add multiple-choice questions with customizable options.
+
 
 ## To be Added Features
 
-- Create and edit JavaScript quizzes with a user-friendly interface.
 - Organize quizzes into categories for better management.
 - Add multiple-choice questions with customizable options.
-- Dark mode for a comfortable user experience.
+- Add Discover Quizzes - where users can upload & take user-created quizzes.
+- Allow app to be compiled w/o dependencies through one executable.
 
 ## Installation
 
