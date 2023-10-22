@@ -52,26 +52,46 @@ electron index.js
 3. Add questions and customize options.
 4. Save your quiz.
 
-## Text File Synatx
+## Text File Syntax
 
 You must follow the correct syntax in order for the quiz to output correctly.
 
 ### Creating an open answer question
+```bash
+openAnswer(question, response)
+```
+
+Example:
 ```bash
 openAnswer(What is the capital of France?, Paris)
 ```
 
 ### Creating an multiple choice question with 2 choices
 ```bash
+multipleChoice2questions(question, choice1, choice2, response)
+```
+
+Example:
+```bash
 multipleChoice2questions(Which of these is a fruit?, Apple, Car, Apple)
 ```
 
 ### Creating an multiple choice question with 3 choices
 ```bash
+multipleChoice3questions(question, choice1, choice2, choice3, response)
+```
+
+Example:
+```bash
 multipleChoice3questions(Which languages are used in web development?, Python, JavaScript, Ruby, JavaScript)
 ```
 
 ### Creating an multiple choice question with 4 choices
+```bash
+multipleChoice4questions(question, choice1, choice2, choice3, choice4, response)
+```
+
+Example:
 ```bash
 multipleChoice4questions(What's the largest planet in our solar system?, Earth, Mars, Jupiter, Venus, Jupiter)
 ```
