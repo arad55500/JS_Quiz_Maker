@@ -1,6 +1,6 @@
 {
   "name": "js_quiz_maker",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Powered by Node.JS, use a GUI to create quizzes, save them, and transport them as text files that can be imported by the program.",
   "main": "index.js",
   "scripts": {
