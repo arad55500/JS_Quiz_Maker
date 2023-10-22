@@ -1,0 +1,37 @@
+[
+  {
+    "type": "openAnswer",
+    "question": "What is the capital of France?",
+    "response": "Paris"
+  },
+  {
+    "type": "multipleChoice",
+    "question": "Which of these is a fruit?",
+    "choices": [
+      "Apple",
+      "Car"
+    ],
+    "response": "Apple"
+  },
+  {
+    "type": "multipleChoice",
+    "question": "Which languages are used in web development?",
+    "choices": [
+      "Python",
+      "JavaScript",
+      "Ruby"
+    ],
+    "response": "JavaScript"
+  },
+  {
+    "type": "multipleChoice",
+    "question": "What's the largest planet in our solar system?",
+    "choices": [
+      "Earth",
+      "Mars",
+      "Jupiter",
+      "Venus"
+    ],
+    "response": "Jupiter"
+  }
+]

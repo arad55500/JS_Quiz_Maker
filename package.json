@@ -1,0 +1,22 @@
+{
+  "name": "js_quiz_maker",
+  "version": "1.0.0",
+  "description": "Powered by Node.JS, use a GUI to create quizzes, save them, and transport them as text files that can be imported by the program.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "Arad Okanin",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "bootstrap": "^5.3.2",
+    "ejs": "^3.1.9",
+    "electron": "^27.0.2",
+    "express": "^4.18.2",
+    "mongodb": "^6.2.0",
+    "mongoose": "^7.6.3",
+    "multer": "^1.4.5-lts.1"
+  }
+}

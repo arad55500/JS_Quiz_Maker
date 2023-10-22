@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="./styles.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <title>Welcome: JS Quiz Maker</title>
+</head>
+<body class="bg-light">
+
+<%- include('../views/partials/header'); %>
+
+<div class="container">
+    <div class="row mt-3">
+        <div class="col text-center">
+            <h1 class="font-weight-bold">Welcome to JS Quiz Maker</h1>
+            <h3 class="font-weight-bold">Create, discover, and share custom quizzes. Created by Arad Okanin.</h3>
+        </div>
+    </div>
+    <div class="row mt-4 justify-content-center">
+        <div class="col-md-4 text-center mb-4 d-flex justify-content-center">
+            <div class="card" style="max-width: 18rem;">
+                <img class="card-img-top" src="/assets/quiz1.jpg" alt="create quizzes" style="height: 150px; object-fit: cover; object-position: center;">
+                <div class="card-body">
+                    <p class="card-text">Craft challenging or fun quizzes, add multiple-choice questions, true/false scenarios, or open-ended questions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 text-center mb-4 d-flex justify-content-center">
+            <div class="card" style="max-width: 18rem;">
+                <img class="card-img-top" src="/assets/quiz2.jpg" alt="load quizzes" style="height: 150px; object-fit: cover; object-position: center;">
+                <div class="card-body">
+                    <p class="card-text">Have a pre-made quiz or found one you'd like to try? Use our Load feature to seamlessly import and take your quizzes.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 text-center mb-4 d-flex justify-content-center">
+            <div class="card" style="max-width: 18rem;">
+                <img class="card-img-top" src="/assets/quiz3.jpg" alt="test yourself" style="height: 150px; object-fit: cover; object-position: center;">
+                <div class="card-body">
+                    <p class="card-text">Ready to test your JavaScript knowledge? Browse our extensive library of user & community generated quizzes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Actions Section -->
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h2 class="font-weight-bold mb-4">Quick Actions</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-3 text-center mb-4 mt-2">
+            <form action="/myquizzes" method="POST">
+                <button class="btn btn-dark btn-lg btn-block" type="submit">My Quizzes</button>
+            </form>
+        </div>
+        <div class="col-md-3 text-center mb-4 mt-2">
+            <form action="/create" method="POST">
+                <button class="btn btn-dark btn-lg btn-block" type="submit">Create Quiz</button>
+            </form>
+        </div>
+        <div class="col-md-3 text-center mb-4 mt-2">
+            <form action="/load" method="POST">
+                <button class="btn btn-dark btn-lg btn-block" type="submit">Load Quiz</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+    
+
+</div>
+
+
+
+<%- include('../views/partials/footer'); %>
+
+</body>
+</html>
