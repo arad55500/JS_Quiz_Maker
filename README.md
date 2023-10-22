@@ -45,42 +45,42 @@ To run JS_Quiz_Maker, use the following command:
 electron index.js
 ```
 
-### Creating a Quiz
+## Creating a Quiz
 
 1. Create a new Text File
 2. Follow the guide for creating quizzes via text file.
 3. Add questions and customize options.
 4. Save your quiz.
 
-### Text File Synatx
+## Text File Synatx
 
 You must follow the correct syntax in order for the quiz to output correctly.
 
-# Creating an open answer question
+### Creating an open answer question
 ```bash
 openAnswer(What is the capital of France?, Paris)
 ```
 
-# Creating an multiple choice question with 2 choices
+### Creating an multiple choice question with 2 choices
 ```bash
 multipleChoice2questions(Which of these is a fruit?, Apple, Car, Apple)
 ```
 
-# Creating an multiple choice question with 3 choices
+### Creating an multiple choice question with 3 choices
 ```bash
 multipleChoice3questions(Which languages are used in web development?, Python, JavaScript, Ruby, JavaScript)
 ```
 
-# Creating an multiple choice question with 4 choices
+### Creating an multiple choice question with 4 choices
 ```bash
 multipleChoice4questions(What's the largest planet in our solar system?, Earth, Mars, Jupiter, Venus, Jupiter)
 ```
 
-# Saving the text file
+## Saving the text file
 Call your text file any name, but make sure to add the .txt extension at the end when saved.
 
 
-### Taking a Quiz
+## Taking a Quiz
 
 1. Launch the application.
 2. Click on "Load Quiz"
