@@ -8,6 +8,7 @@ const electron = require('electron');
 const multer = require('multer');
 const { convertTextFile } = require('./parseFIle.js');
 const { responses } = require('./parseFIle.js');
+const notifier = require('node-notifier');
 
 
 const app = express();
@@ -33,7 +34,19 @@ const storage = multer.diskStorage({
     }
 });
 
+const storage_quiz_folder = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'my_quizzes/');  // Set the directory where uploaded files will be saved
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.originalname + '-uploaded' + Date.now());  // Save with a unique name based on the current timestamp
+    }
+});
+
 const upload = multer({ storage: storage });
+
+const upload_quiz_folder = multer({ storage: storage_quiz_folder });
+
 const ITEMS_PER_PAGE = 15;
 
 
@@ -127,6 +140,19 @@ app.get('/loadQuiz/:filename',upload.single('quizFile'), async (req, res) => {
     } catch (err) {
         console.error(err);
         res.status(500).send('Error loading the quiz.');
+    }
+});
+
+app.post('/upload-quiz', upload_quiz_folder.single('quizFile'), (req, res) => {
+    if (req.file) {
+        notifier.notify({
+            title: 'JS Quiz Maker',
+            message: 'Quiz uploaded successfully!',
+            sound: true
+          });
+        res.redirect('/'); // Or whatever your route is to render the myquizzes.ejs page
+    } else {
+        res.status(400).send('No file uploaded or incorrect file format.');
     }
 });
 

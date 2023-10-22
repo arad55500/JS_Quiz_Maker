@@ -1,37 +1,37 @@
 [
   {
     "type": "openAnswer",
-    "question": "What is the largest ocean on Earth?",
-    "response": "Pacific Ocean"
+    "question": "What is the capital of France?",
+    "response": "Paris"
   },
   {
     "type": "multipleChoice",
-    "question": "Which of these is a primary color?",
+    "question": "Which of these is a fruit?",
     "choices": [
-      "Blue",
-      "Sandwich"
+      "Apple",
+      "Car"
     ],
-    "response": "Blue"
+    "response": "Apple"
   },
   {
     "type": "multipleChoice",
-    "question": "Which of these are computer operating systems?",
+    "question": "Which languages are used in web development?",
     "choices": [
-      "Windows",
-      "Sandwich",
-      "Banana"
+      "Python",
+      "JavaScript",
+      "Ruby"
     ],
-    "response": "Windows"
+    "response": "JavaScript"
   },
   {
     "type": "multipleChoice",
-    "question": "Which of these is a type of tree?",
+    "question": "What's the largest planet in our solar system?",
     "choices": [
-      "Pine",
-      "Bicycle",
-      "Sandwich",
-      "Microphone"
+      "Earth",
+      "Mars",
+      "Jupiter",
+      "Venus"
     ],
-    "response": "Pine"
+    "response": "Jupiter"
   }
 ]
