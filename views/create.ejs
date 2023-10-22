@@ -8,15 +8,187 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <title>Create Quiz</title>
 </head>
 <body class="bg-light">
 
 <%- include('../views/partials/header'); %>
 
-<p class = "text-center">WIP</p>
+<div class="d-flex justify-content-center mt-4">
+    <h3 class="font-weight-bold">Create Quiz | Quiz Editor</h3>
+</div>
 
-<%- include('../views/partials/footer'); %>
+<div class="row mt-3">
+    <!-- Save Quiz Column -->
+    <div class="col">
+    <button id="saveQuizBtn" class="btn btn-success w-100">Save Quiz</button>
+
+    </div>
+
+    <!-- Reset Column -->
+    <div class="col">
+        <form action="/create" method="POST">
+            <button type="submit" id="resetBtn" class="btn btn-danger w-100">Reset</button>
+        </form>
+    </div>
+
+    <!-- Quit Editor Column -->
+    <div class="col">
+        <form action="/" method="POST">
+            <button type="submit" id="quitEditorBtn" class="btn btn-primary w-100">Quit Editor</button>
+        </form>
+    </div>
+</div>
+
+
+
+
+<style>
+    .quiz-editor-container {
+        border: 3px dotted #000;
+        min-height: calc(100vh - 200px); /* This might need adjusting depending on other content on the page */
+        position: relative; /* For positioning the inner content */
+        margin: 10px 5px; /* Adjusting the right and left margins to 5px */
+        padding: 10px;
+    }
+
+    .quiz-editor-title {
+        font-family: 'Courier New', monospace; /* A 'code' style font */
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #f8f8f8; /* A light background */
+        padding: 5px;
+        border: 1px dotted #ccc;
+    }
+</style>
+
+<div class="quiz-editor-container">
+    <div class="d-flex justify-content-start mb-2">
+        <!-- Open Answer Button -->
+        <button class="btn btn-primary mr-2" id="openAnswerBtn">Open Answer</button>
+        
+        <!-- Multiple Choice Dropdown -->
+        <div class="btn-group">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Multiple Choice
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" data-choice="2" href="#">2 Choices</a>
+                <a class="dropdown-item" data-choice="3" href="#">3 Choices</a>
+                <a class="dropdown-item" data-choice="4" href="#">4 Choices</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Placeholder for the questions -->
+    <div id="questionsPlaceholder"></div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+<script>
+    $(document).ready(function() {
+        let questionCount = 0;
+
+        // Open Answer Button Clicked
+        $('#openAnswerBtn').click(function() {
+            const openAnswerHtml = `
+                <div class="quiz-item mb-4">
+                    <h4 contenteditable="true">Open Answer Question ${questionCount + 1}</h4>
+                    <input type="text" name="openAnswer_${questionCount}" placeholder="Type your answer here" class="form-control">
+                </div>
+            `;
+
+            $('#questionsPlaceholder').append(openAnswerHtml);
+            questionCount++;
+        });
+
+        // Multiple Choice Dropdown Item Clicked
+        $('.dropdown-menu .dropdown-item').click(function() {
+            const numChoices = $(this).data('choice');
+            let choicesHtml = '';
+
+            for (let i = 0; i < numChoices; i++) {
+                choicesHtml += `
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="question_${questionCount}" id="choice_${questionCount}_${i}" value="Choice ${i + 1}">
+                        <label class="form-check-label" contenteditable="true" for="choice_${questionCount}_${i}">
+                            Choice ${i + 1}
+                        </label>
+                    </div>
+                `;
+            }
+
+            const multipleChoiceHtml = `
+                <div class="quiz-item mb-4">
+                    <h4 contenteditable="true">Multiple Choice Question ${questionCount + 1}</h4>
+                    ${choicesHtml}
+                </div>
+            `;
+
+            $('#questionsPlaceholder').append(multipleChoiceHtml);
+            questionCount++;
+        });
+
+        // Listen for "Enter" keypress on editable elements
+        $(document).on('keydown', '[contenteditable="true"]', function(e) {
+            if (e.keyCode === 13) {
+                e.preventDefault();
+                $(this).blur(); // Remove focus from the element
+            }
+        });
+    });
+
+    
+    $('#saveQuizBtn').click(function(e) {
+    e.preventDefault();
+
+    let output = '';
+
+    $('.quiz-item').each(function() {
+        if ($(this).find('input[type=text]').length) {
+            // Open answer question
+            output += `openAnswer(${$(this).find('h4').text().trim()}, ${$(this).find('input').val().trim()})\n`;
+        } else {
+            // Multiple choice question
+            let choices = [];
+            let correctAnswer = "";
+            $(this).find('.form-check-input').each(function() {
+                choices.push($(this).next().text().trim());
+                if ($(this).is(':checked')) {
+                    correctAnswer = $(this).next().text().trim();
+                }
+            });
+            output += `multipleChoice${choices.length}questions(${$(this).find('h4').text().trim()}, ${choices.join(', ')}, ${correctAnswer})\n`;
+        }
+    });
+
+    // Generate a file and trigger the download
+    const blob = new Blob([output], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.style.display = 'none';
+    a.href = url;
+    a.download = 'quiz.txt';
+
+    document.body.appendChild(a);
+    a.click();
+
+    window.URL.revokeObjectURL(url);
+});
+
+    
+</script>
+
+
 
 </body>
 </html>

@@ -198,6 +198,18 @@ app.post('/submit-quiz', (req, res) => {
     });
 });
 
+app.post('/save-quiz', (req, res) => {
+    const quizData = JSON.parse(req.body.quizData);
+
+    // Transform the quizData into your desired syntax
+    let transformedData = "/* Your desired syntax here, based on the structure of quizData */";
+
+    // Send it back as a downloadable file
+    res.setHeader('Content-Disposition', 'attachment; filename=quiz.txt');
+    res.setHeader('Content-Type', 'text/plain');
+    res.send(transformedData);
+});
+
 
 
 

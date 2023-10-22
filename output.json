@@ -1,37 +1,18 @@
 [
   {
+    "type": "multipleChoice",
+    "question": "Multiple Choice Question 1",
+    "choices": [
+      "Choice 1",
+      "Choice 2",
+      "Choice 3",
+      "Choice 4"
+    ],
+    "response": "Choice 2"
+  },
+  {
     "type": "openAnswer",
-    "question": "What is the capital of France?",
-    "response": "Paris"
-  },
-  {
-    "type": "multipleChoice",
-    "question": "Which of these is a fruit?",
-    "choices": [
-      "Apple",
-      "Car"
-    ],
-    "response": "Apple"
-  },
-  {
-    "type": "multipleChoice",
-    "question": "Which languages are used in web development?",
-    "choices": [
-      "Python",
-      "JavaScript",
-      "Ruby"
-    ],
-    "response": "JavaScript"
-  },
-  {
-    "type": "multipleChoice",
-    "question": "What's the largest planet in our solar system?",
-    "choices": [
-      "Earth",
-      "Mars",
-      "Jupiter",
-      "Venus"
-    ],
-    "response": "Jupiter"
+    "question": "Open Answer Question 2",
+    "response": "answer"
   }
 ]
