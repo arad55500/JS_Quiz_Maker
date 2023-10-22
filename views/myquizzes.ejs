@@ -25,7 +25,40 @@
 </div>
 
 
-<p>WIP</p>
+<div class="container mt-4">
+    <div class="row">
+        <% for(let i = 0; i < files.length; i++) { %>
+            <div class="col-md-4">
+                <!-- Making the filenames clickable -->
+                <p><a href="/loadQuiz/<%= encodeURIComponent(files[i]) %>"><%= files[i] %></a></p>
+            </div>
+            <% if ((i + 1) % 3 === 0) { %>
+                </div><div class="row mt-3">
+            <% } %>
+        <% } %>
+    </div>
+
+    <!-- Pagination -->
+    <nav aria-label="Page navigation" class="mt-5">
+        <ul class="pagination justify-content-center">
+            <li class="page-item <%= currentPage === 1 ? 'disabled' : '' %>">
+                <a class="page-link" href="/?page=<%= currentPage - 1 %>">Previous</a>
+            </li>
+            <% for(let i = 1; i <= totalPages; i++) { %>
+                <li class="page-item <%= currentPage === i ? 'active' : '' %>">
+                    <a class="page-link" href="/?page=<%= i %>"><%= i %></a>
+                </li>
+            <% } %>
+            <li class="page-item <%= currentPage === totalPages ? 'disabled' : '' %>">
+                <a class="page-link" href="/?page=<%= currentPage + 1 %>">Next</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
 

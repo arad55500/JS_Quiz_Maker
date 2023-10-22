@@ -1,37 +1,42 @@
 [
   {
     "type": "openAnswer",
-    "question": "What is the capital of France?",
-    "response": "Paris"
+    "question": "Which country is known as the Land of the Rising Sun?",
+    "response": "Japan"
   },
   {
     "type": "multipleChoice",
-    "question": "Which of these is a fruit?",
+    "question": "Which of these is a color?",
+    "choices": [
+      "Blue",
+      "Dog"
+    ],
+    "response": "Blue"
+  },
+  {
+    "type": "multipleChoice",
+    "question": "Which Programming language uses the JVM?",
     "choices": [
       "Apple",
-      "Car"
+      "Java",
+      "C#"
     ],
-    "response": "Apple"
+    "response": "Java"
   },
   {
     "type": "multipleChoice",
-    "question": "Which languages are used in web development?",
+    "question": "Which of these are European countries?",
     "choices": [
-      "Python",
-      "JavaScript",
-      "Ruby"
+      "France",
+      "Apple",
+      "China",
+      "Russia"
     ],
-    "response": "JavaScript"
+    "response": "France"
   },
   {
-    "type": "multipleChoice",
-    "question": "What's the largest planet in our solar system?",
-    "choices": [
-      "Earth",
-      "Mars",
-      "Jupiter",
-      "Venus"
-    ],
-    "response": "Jupiter"
+    "type": "openAnswer",
+    "question": "What year was the U.S secleration of Independence signed?",
+    "response": "1776"
   }
 ]

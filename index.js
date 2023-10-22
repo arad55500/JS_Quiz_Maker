@@ -34,6 +34,7 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({ storage: storage });
+const ITEMS_PER_PAGE = 15;
 
 
 const PORT = 3000;
@@ -65,7 +66,23 @@ app.post('/', (req, res) => {
 })
 
 app.post('/myquizzes', (req, res) => {
-    res.render('myquizzes.ejs');
+    const page = parseInt(req.query.page) || 1;
+
+    fs.readdir(path.join(__dirname, 'my_quizzes'), (err, files) => {
+        if (err) {
+            return res.status(500).send('Server Error');
+        }
+
+        const start = (page - 1) * ITEMS_PER_PAGE;
+        const paginatedFiles = files.slice(start, start + ITEMS_PER_PAGE);
+        const totalPages = Math.ceil(files.length / ITEMS_PER_PAGE);
+
+        res.render('myquizzes.ejs', {
+            files: paginatedFiles,
+            currentPage: page,
+            totalPages: totalPages
+        });
+    });
 });
 
 app.post('/load', (req, res) => {
@@ -91,12 +108,27 @@ app.post('/quiz', (req, res) => {
 app.post('/upload', upload.single('quizFile'), (req, res) => {
     if (req.file) {
         const quizData = convertTextFile(req.file.path); 
+        console.log(quizData);
         res.render('in-quiz.ejs', { quizData });
     } else {
         res.status(400).send('No file uploaded.');
     }
 });
 
+app.get('/loadQuiz/:filename',upload.single('quizFile'), async (req, res) => {
+    const filename = decodeURIComponent(req.params.filename);
+    const filepath = path.join(__dirname, 'my_quizzes', filename); 
+    
+    try {
+        const quizData = convertTextFile(filepath); // Process the file using convertTextFile
+        
+        // Render the in-quiz.ejs page and pass the quiz data to it
+        res.render('in-quiz.ejs', { quizData: quizData });
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Error loading the quiz.');
+    }
+});
 
 app.get('/in-quiz', (req, res) => {
     

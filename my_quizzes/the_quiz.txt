@@ -1,0 +1,4 @@
+openAnswer(What is the largest ocean on Earth?, Pacific Ocean)
+multipleChoice2questions(Which of these is a primary color?, Blue, Sandwich, Blue)
+multipleChoice3questions(Which of these are computer operating systems?, Windows, Sandwich, Banana, Windows)
+multipleChoice4questions(Which of these is a type of tree?, Pine, Bicycle, Sandwich, Microphone, Pine)

@@ -1,0 +1,4 @@
+openAnswer(What is the currency used in the UK?, Pound Sterling)
+multipleChoice2questions(Which of these is a musical instrument?, Violin, Refrigerator, Violin)
+multipleChoice3questions(Which of these are US states?, California, Latte, Notebook, California)
+multipleChoice4questions(Which of these are mammals?, Whale, Rose, Apple, Pineapple, Whale)

@@ -1,0 +1,5 @@
+openAnswer(Which country is known as the Land of the Rising Sun?, Japan)
+multipleChoice2questions(Which of these is a color?, Blue, Dog, Blue)
+multipleChoice3questions(Which Programming language uses the JVM?, Apple, Java, C#, Java)
+multipleChoice4questions(Which of these are European countries?, France, Apple, China, Russia, France)
+openAnswer(What year was the U.S secleration of Independence signed?, 1776)
