@@ -51,23 +51,34 @@
         <% } %>
     </div>
 
-    <!-- Pagination -->
-    <nav aria-label="Page navigation" class="mt-5">
-        <ul class="pagination justify-content-center">
-            <li class="page-item <%= currentPage === 1 ? 'disabled' : '' %>">
-                <a class="page-link" href="/?page=<%= currentPage - 1 %>">Previous</a>
+<!-- Pagination -->
+<nav aria-label="Page navigation" class="mt-5">
+    <ul class="pagination justify-content-center">
+        <li class="page-item <%= currentPage === 1 ? 'disabled' : '' %>">
+            <form action="/myquizzes" method="post" style="display: inline;">
+                <input type="hidden" name="page" value="<%= currentPage - 1 %>">
+                <button type="submit" class="page-link" <%= currentPage === 1 ? 'disabled' : '' %>>Previous</button>
+            </form>
+        </li>
+        <% for(let i = 1; i <= totalPages; i++) { %>
+            <li class="page-item <%= currentPage === i ? 'active' : '' %>">
+                <form action="/myquizzes" method="post" style="display: inline;">
+                    <input type="hidden" name="page" value="<%= i %>">
+                    <button type="submit" class="page-link" <%= currentPage === i ? 'disabled' : '' %>><%= i %></button>
+                </form>
             </li>
-            <% for(let i = 1; i <= totalPages; i++) { %>
-                <li class="page-item <%= currentPage === i ? 'active' : '' %>">
-                    <a class="page-link" href="/?page=<%= i %>"><%= i %></a>
-                </li>
-            <% } %>
-            <li class="page-item <%= currentPage === totalPages ? 'disabled' : '' %>">
-                <a class="page-link" href="/?page=<%= currentPage + 1 %>">Next</a>
-            </li>
-        </ul>
-    </nav>
+        <% } %>
+        <li class="page-item <%= currentPage === totalPages ? 'disabled' : '' %>">
+            <form action="/myquizzes" method="post" style="display: inline;">
+                <input type="hidden" name="page" value="<%= currentPage + 1 %>">
+                <button type="submit" class="page-link" <%= currentPage === totalPages ? 'disabled' : '' %>>Next</button>
+            </form>
+        </li>
+    </ul>
+</nav>
 </div>
+
+
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>

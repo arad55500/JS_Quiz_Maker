@@ -47,7 +47,7 @@ const upload = multer({ storage: storage });
 
 const upload_quiz_folder = multer({ storage: storage_quiz_folder });
 
-const ITEMS_PER_PAGE = 15;
+const ITEMS_PER_PAGE = 12;
 
 
 const PORT = 3000;
@@ -79,7 +79,8 @@ app.post('/', (req, res) => {
 })
 
 app.post('/myquizzes', (req, res) => {
-    const page = parseInt(req.query.page) || 1;
+    // Get page number from POST request body instead of query parameter
+    const page = parseInt(req.body.page) || 1;
 
     fs.readdir(path.join(__dirname, 'my_quizzes'), (err, files) => {
         if (err) {
