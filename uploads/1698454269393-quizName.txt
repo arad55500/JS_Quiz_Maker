@@ -1,0 +1,2 @@
+multipleChoice3questions(Test, Choice 1, Choice 2, Choice 3, Choice 1)
+openAnswer(sadsadasd, Aasdasd)

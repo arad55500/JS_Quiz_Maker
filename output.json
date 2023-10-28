@@ -1,17 +1,17 @@
 [
   {
-    "type": "openAnswer",
-    "question": "What is the Capital of Israel?",
-    "response": "Jersusalem"
+    "type": "multipleChoice",
+    "question": "Test",
+    "choices": [
+      "Choice 1",
+      "Choice 2",
+      "Choice 3"
+    ],
+    "response": "Choice 1"
   },
   {
-    "type": "multipleChoice",
-    "question": "Who is the biggest enemy?",
-    "choices": [
-      "Hamas",
-      "Isis",
-      "Dor"
-    ],
-    "response": "Hamas"
+    "type": "openAnswer",
+    "question": "sadsadasd",
+    "response": "Aasdasd"
   }
 ]
