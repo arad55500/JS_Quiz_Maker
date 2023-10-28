@@ -16,6 +16,13 @@ const { app: electronApp, BrowserWindow } = electron;
 
 const version = require('./package.json').version; // show version number
 
+app.set('view engine', 'ejs');
+app.use(express.static(__dirname + '/views'));
+
+app.set('views', __dirname + '/views');
+
+app.use(bodyParser.urlencoded({ extended: true }));
+
 try {
     mongoose.connect('mongodb://localhost:27017/quizDB', { useNewUrlParser: true, useUnifiedTopology: true });
     console.log('Connected to MongoDB (QuizDB Database)');
@@ -24,8 +31,6 @@ catch (err) {
     console.log('Error connecting to MongoDB (QuizDB Database), check your connection and try again');
     console.log(err);
 }
-app.use(express.static(__dirname + '/views'));
-app.use(bodyParser.urlencoded({ extended: true }));
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -64,7 +69,7 @@ electronApp.on('ready', function() {
         title: 'LOADING...',
         autoHideMenuBar: true,
         useContentSize: true,
-        resizable: false,
+        resizable: true,
     });
 
     mainWindow.loadURL(`http://${IP}:${PORT}/`);
