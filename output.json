@@ -1,17 +1,16 @@
 [
   {
-    "type": "multipleChoice",
-    "question": "Test",
-    "choices": [
-      "Choice 1",
-      "Choice 2",
-      "Choice 3"
-    ],
-    "response": "Choice 1"
+    "type": "openAnswer",
+    "question": "How old is Arad",
+    "response": "22"
   },
   {
-    "type": "openAnswer",
-    "question": "sadsadasd",
-    "response": "Aasdasd"
+    "type": "multipleChoice",
+    "question": "True of False",
+    "choices": [
+      "True",
+      "False"
+    ],
+    "response": "False"
   }
 ]
