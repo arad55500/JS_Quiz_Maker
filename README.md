@@ -13,7 +13,16 @@ JS_Quiz_Maker is a cross-platform desktop application built with Electron, Node.
 - Add multiple-choice questions with customizable options.
 - Allow app to be compiled w/o dependencies through one executable.
 
-## Installation
+## Installation: One Command
+
+Run the following command in your terminal:
+   ```bash
+   git clone https://github.com/yourusername/JS_Quiz_Maker.git
+   cd JS_Quiz_Maker
+   ./launch.sh
+   ```
+
+## Installation: Development Environment
 
 1. Clone this repository to your local machine:
 
