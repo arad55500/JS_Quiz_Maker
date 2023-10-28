@@ -38,7 +38,7 @@ JS_Quiz_Maker is a cross-platform desktop application built with Electron, Node.
 To run JS_Quiz_Maker, use the following command:
 
 ```bash
-electron index.js
+npm start
 ```
 
 ## Creating a Quiz
