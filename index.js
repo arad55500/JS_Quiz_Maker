@@ -14,7 +14,7 @@ const notifier = require('node-notifier');
 const app = express();
 const { app: electronApp, BrowserWindow } = electron;
 
-const version = require('./package.json').version;
+const version = require('./package.json').version; // show version number
 
 try {
     mongoose.connect('mongodb://localhost:27017/quizDB', { useNewUrlParser: true, useUnifiedTopology: true });
