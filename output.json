@@ -1,16 +1,42 @@
 [
   {
     "type": "openAnswer",
-    "question": "How old is Arad",
-    "response": "22"
+    "question": "Which country is known as the Land of the Rising Sun?",
+    "response": "Japan"
   },
   {
     "type": "multipleChoice",
-    "question": "True of False",
+    "question": "Which of these is a color?",
     "choices": [
-      "True",
-      "False"
+      "Blue",
+      "Dog"
     ],
-    "response": "False"
+    "response": "Blue"
+  },
+  {
+    "type": "multipleChoice",
+    "question": "Which Programming language uses the JVM?",
+    "choices": [
+      "Apple",
+      "Java",
+      "C#"
+    ],
+    "response": "Java"
+  },
+  {
+    "type": "multipleChoice",
+    "question": "Which of these are European countries?",
+    "choices": [
+      "France",
+      "Apple",
+      "China",
+      "Russia"
+    ],
+    "response": "France"
+  },
+  {
+    "type": "openAnswer",
+    "question": "What year was the U.S secleration of Independence signed?",
+    "response": "1776"
   }
 ]

@@ -143,6 +143,13 @@ We would like to thank the following libraries and frameworks for making this pr
 - Express: https://expressjs.com/
 - Other open-source contributors and projects.
 
+## Screenshots
+![Screenshot1](/screenshots/screenshot1.jpg "screenshot1")
+![Screenshot2](/screenshots/screenshot2.jpg "screenshot2")
+![Screenshot3](/screenshots/screenshot3.jpg "screenshot3")
+![Screenshot4](/screenshots/screenshot4.jpg "screenshot4")
+![Screenshot5](/screenshots/screenshot5.jpg "screenshot5")
+
 ## Thank you
 
 Enjoy using JS_Quiz_Maker! Happy quizzing!
